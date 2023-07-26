@@ -1,0 +1,20 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+def index(request):
+    return render(request,"index.html")
+def facilities(request):
+    return render(request,"facilities.html")
+def instructors(request):
+    return render(request,"instructors.html")
+def courses(request):
+    return render(request,"courses.html")
+
+
+def about(request):
+    return render(request,"about.html")
+def contact(request):
+    return render(request,"contact.html")
+def team(request):
+    return render(request,"team.html")
