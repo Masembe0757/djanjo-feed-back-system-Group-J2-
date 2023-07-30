@@ -11,7 +11,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png" rel="icon' %}">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -57,12 +57,16 @@
               <li><a href="/courses">Courses</a></li>
               <li><a href="/instructors">Instructors</a></li>
               <li><a href="/facilities">Compus facilities</a></li>
+              <li><a href="/responses">Feed back</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/about">About Us</a></li>
           <li><a class="nav-link scrollto" href="/team">Team</a></li>
           
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+          {% if user.username %}
+          <li><a class="nav-link scrollto" href="/logout">logout</a></li>
+          {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

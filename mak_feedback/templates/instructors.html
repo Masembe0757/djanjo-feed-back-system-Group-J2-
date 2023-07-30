@@ -73,11 +73,15 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="bg-light p-5">
+            {% for message in messages %}
+            <p style="color:crimson;" >{{message}}</p>
+            {% endfor %}
             <form
-            action="/upload_skill"
+            action="instructors"
             method="post"
             enctype="multipart/form-data"
           >
+          {% csrf_token %}
             <div class="row">
               <div class="col">
                 <input
@@ -107,7 +111,7 @@
                   type="text"
                   class="form-control"
                   id="inputEmail3"
-                  name="email"
+                  name="student_number"
                 
                 />
               </div>
@@ -122,7 +126,7 @@
                   type="text"
                   class="form-control"
                   id="inputPassword3"
-                  name="password"
+                  name="registration_number"
                   
                 />
               </div>
@@ -150,18 +154,18 @@
             <br>
             <div class="form-group row">
               <label for="inputCity">College</label>
-              <input type="text" class="form-control" name ="name" id="inputCity">
+              <input type="text" class="form-control" name ="college" id="inputCity">
             </div>
             <br>
             <div class="form-group row">
               <label for="inputCity">Your Program</label>
-              <input type="text" class="form-control" name ="name" id="inputCity">
+              <input type="text" class="form-control" name ="program" id="inputCity">
             </div>
            
             <br>
             <div class="form-group row">
               <label for="inputCity">Course Unit</label>
-              <input type="text" class="form-control" name ="name" id="inputCity">
+              <input type="text" class="form-control" name ="course_unit" id="inputCity">
             </div>
             <br>
             <div class="form-group ">
@@ -171,7 +175,7 @@
             <br>
             <div class="form-group ">
               <label for="inputCity">Course Instructor</label>
-              <input type="text" class="form-control" name ="Instructor" id="inputCity">
+              <input type="text" class="form-control" name ="instructor" id="inputCity">
             </div>
 
             <br>

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Squadfree Bootstrap Template - Index</title>
+    <title>Mak-feedback</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -81,11 +81,15 @@
               <li><a href="/courses">Courses</a></li>
               <li><a href="/instructors">Instructors</a></li>
               <li><a href="/facilities">Campus facilities</a></li>
+              <li><a href="/responses">Feed back</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/about">About Us</a></li>
           <li><a class="nav-link scrollto" href="/team">Team</a></li>
           <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+          {% if user.username %}
+          <li><a class="nav-link scrollto" href="/logout">logout</a></li>
+          {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
