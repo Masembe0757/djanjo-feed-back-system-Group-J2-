@@ -18,3 +18,5 @@ def contact(request):
     return render(request,"contact.html")
 def team(request):
     return render(request,"team.html")
+def services(request):
+    return render(request,"services.html")
