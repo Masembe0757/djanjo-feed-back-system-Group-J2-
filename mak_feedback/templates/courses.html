@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Mak-feedback</title>
+    <title>Courses</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -67,14 +67,22 @@
       data-wow-delay="0.1s"
       style="margin-top: -6rem"
     >
+    
       <div class="row justify-content-center">
         <div class="col-lg-8">
+        
+
+
           <div class="bg-light p-5">
+            {% for message in messages %}
+            <p style="color:crimson;" >{{message}}</p>
+            {% endfor %}
             <form
-              action="/upload_skill"
+              action="courses"
               method="post"
               enctype="multipart/form-data"
             >
+            {% csrf_token %}
               <div class="row">
                 <div class="col">
                   <input
@@ -104,8 +112,8 @@
                     type="text"
                     class="form-control"
                     id="inputEmail3"
-                    name="email"
-                    placeholder="Email"
+                    name="student_number"
+                    placeholder="Student number"
                   />
                 </div>
               </div>
@@ -119,8 +127,8 @@
                     type="text"
                     class="form-control"
                     id="inputPassword3"
-                    name="password"
-                    placeholder="Password"
+                    name="registration_number"
+                    placeholder="Registration number"
                   />
                 </div>
               </div>
@@ -147,18 +155,18 @@
               <br>
               <div class="form-group row">
                 <label for="inputCity">College</label>
-                <input type="text" class="form-control" name ="name" id="inputCity">
+                <input type="text" class="form-control" name ="college" id="inputCity">
               </div>
               <br>
               <div class="form-group row">
                 <label for="inputCity">Your Program</label>
-                <input type="text" class="form-control" name ="name" id="inputCity">
+                <input type="text" class="form-control" name ="program" id="inputCity">
               </div>
              
               <br>
               <div class="form-group row">
                 <label for="inputCity">Course Unit</label>
-                <input type="text" class="form-control" name ="name" id="inputCity">
+                <input type="text" class="form-control" name ="course_unit" id="inputCity">
               </div>
               <br>
               <div class="form-group ">
@@ -168,7 +176,7 @@
               <br>
               <div class="form-group ">
                 <label for="inputCity">Course Instructor</label>
-                <input type="text" class="form-control" name ="Instructor" id="inputCity">
+                <input type="text" class="form-control" name ="instructor" id="inputCity">
               </div>
 
               <br>

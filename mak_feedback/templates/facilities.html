@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Mak-feedback</title>
+    <title>Facilities</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -73,12 +73,16 @@
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <div class="bg-light p-5">
+            {% for message in messages %}
+            <p style="color:crimson;" >{{message}}</p>
+            {% endfor %}
 
             <form
-            action="/upload_skill"
+            action="facilities"
             method="post"
             enctype="multipart/form-data"
           >
+          {% csrf_token %}
             <div class="row">
               <div class="col">
                 <input
@@ -108,7 +112,7 @@
                   type="text"
                   class="form-control"
                   id="inputEmail3"
-                  name="email"
+                  name="student_number"
                   
                 />
               </div>
@@ -123,7 +127,7 @@
                   type="text"
                   class="form-control"
                   id="inputPassword3"
-                  name="password"
+                  name="registration_number"
                   
                 />
               </div>
@@ -151,24 +155,24 @@
             <br>
             <div class="form-group row">
               <label for="inputCity">College</label>
-              <input type="text" class="form-control" name ="name" id="inputCity">
+              <input type="text" class="form-control" name ="college" id="inputCity">
             </div>
             <br>
             <div class="form-group row">
               <label for="inputCity">Your Program</label>
-              <input type="text" class="form-control" name ="name" id="inputCity">
+              <input type="text" class="form-control" name ="program" id="inputCity">
             </div>
            
             <br>
             <div class="form-group row">
-              <label for="inputCity">Facility/s</label>
-              <input type="text" class="form-control" name ="name" id="inputCity">
+              <label for="inputCity">Facility(s)</label>
+              <input type="text" class="form-control" name ="facility" id="inputCity">
             </div>
             <br>
            
             <div class="form-group ">
               <label for="inputCity">Who is in charge?</label>
-              <input type="text" class="form-control" name ="Instructor" id="inputCity">
+              <input type="text" class="form-control" name ="charge" id="inputCity">
             </div>
 
             <br>
