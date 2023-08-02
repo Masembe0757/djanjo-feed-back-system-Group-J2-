@@ -17,6 +17,8 @@ urlpatterns = [
     path('contact',views.contact, name ="contact"),
     path('team',views.team, name ="team"),
     path('responses',views.response, name ="response"),
+    path('statistics',views.stat, name ="statistics"),
+    
     
     #Eli
     path('deletec/<int:id>', views.deletec, name = "deletec"),
