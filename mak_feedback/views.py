@@ -50,8 +50,14 @@ def instructors(request):
                 code = request.POST['code']
                 instructor = request.POST['instructor']
                 desc = request.POST['description']
+                one = request.POST['one']
+                two = request.POST['two']
+                three = request.POST['three']
+                four = request.POST['four']
+                five = request.POST['five']
                 
-                Instructors(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,argument=desc).save();
+                
+                Instructors(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,one=one,two=two,third=three,four=four,five=five,argument=desc).save();
                 messages.info(request,'response published successfully')
                 return redirect("instructors")
             except Exception as e:
