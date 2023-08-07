@@ -10,7 +10,7 @@ The Makerere University Student Feedback System is an online platform designed t
 2. Usage and Features
 3. Data Models and Database Schema
 4. Authentication and Authorization
-5. Error Handling
+5. Error Handling.
 6. Testing
 7. Troubleshooting
 8. Security Considerations
