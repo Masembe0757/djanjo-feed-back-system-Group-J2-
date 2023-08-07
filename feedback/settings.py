@@ -31,8 +31,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+MODELS = os.path.join(BASE_DIR,'mak_feedback/model')
+
 INSTALLED_APPS = [
-    'mak_feedback.apps.MakFeedbackConfig',
+    'mak_feedback',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

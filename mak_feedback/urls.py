@@ -20,6 +20,8 @@ urlpatterns = [
     path('statistics',views.stat, name ="statistics"),
     
     
+    
+    
     #Eli
     path('deletec/<int:id>', views.deletec, name = "deletec"),
     path('deletef/<int:id>', views.deletef, name = "deletef"),

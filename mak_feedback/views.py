@@ -6,9 +6,11 @@ from . models import Facilities
 from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.models import User,auth
-import pickle
+from .apps import MakFeedbackConfig
+import csv
 
 # Create your views here.
+
 def index(request):
     return render(request,"index.html")
 def facilities(request):
@@ -120,6 +122,10 @@ def login(request):
 def stat(request):
     if request.user.is_authenticated:
         
+        
+        
+        
+        
         courses_no = Courses.objects.all().count()
         instructor_no =Instructors.objects.all().count()
         facilities_no = Facilities.objects.all().count()
@@ -158,7 +164,70 @@ def stat(request):
         chuss_f = Facilities.objects.filter(college = 'CHUSS').count()
         chuss_i = Instructors.objects.filter(college = 'CHUSS').count()
         chuss_sum = chuss_c + chuss_f + chuss_i
-       
+        
+        
+        
+        
+        #post
+        course_post = Courses.objects.filter(level = 'post graduate').count()
+        inst_post = Instructors.objects.filter(level = 'post graduate').count()
+        fac_post = Facilities.objects.filter(level = 'post graduate').count()
+        post_sum = course_post+inst_post+fac_post
+        
+        course_und = Courses.objects.filter(level = 'under graduate').count()
+        inst_und = Instructors.objects.filter(level = 'under graduate').count()
+        fac_und = Facilities.objects.filter(level = 'under graduate').count()
+        und_sum = course_und+inst_und+fac_und
+        
+        
+        
+        #SENTIMENT SECTION
+        post_c = 0
+        neg_c = 0
+        neu_c = 0
+        post_i = 0
+        neg_i = 0
+        neu_i = 0
+        post_f = 0
+        neg_f = 0
+        neu_f = 0
+        for desc in Courses.objects.all().values_list('argument'):
+            for text in desc:
+                vector = MakFeedbackConfig.vectorizer.transform([text])
+                prediction = MakFeedbackConfig.model.predict(vector)[0]
+                if prediction == "positive":
+                    post_c+=1
+                elif prediction == "negative":
+                    neg_c+=1
+                else:
+                    neu_c+=1
+                    
+        for desc2 in Instructors.objects.all().values_list('argument'):
+            for text in desc2:
+                vector = MakFeedbackConfig.vectorizer.transform([text])
+                prediction = MakFeedbackConfig.model.predict(vector)[0]
+                if prediction == "positive":
+                    post_i+=1
+                elif prediction == "negative":
+                    neg_i+=1
+                else:
+                    neu_i+=1
+                    
+        for desc3 in Facilities.objects.all().values_list('argument'):
+            for text in desc3:
+                vector = MakFeedbackConfig.vectorizer.transform([text])
+                prediction = MakFeedbackConfig.model.predict(vector)[0]
+                if prediction == "positive":
+                    post_f+=1
+                elif prediction == "negative":
+                    neg_f+=1
+                else:
+                    neu_f+=1
+        
+            
+            
+            
+        
         return render(request,"statistics.html",
                       {'courses_no':courses_no,
                        'facilities_no':facilities_no,
@@ -170,6 +239,17 @@ def stat(request):
                        'cedat_sum':cedat_sum,
                        'cees_sum':cees_sum,
                        'chuss_sum':chuss_sum,
+                       'post_sum': post_sum,
+                       'und_sum': und_sum,
+                       'post_c':post_c,
+                       'neg_c':neg_c,
+                       'neu_c':neu_c,
+                       'post_i':post_i,
+                       'neg_i':neg_i,
+                       'neu_i':neu_i,
+                       'post_f':post_f,
+                       'neg_f':neg_f,
+                       'neu_f':neu_f,
                        
                        
                        })
@@ -187,3 +267,64 @@ def contact(request):
     return render(request,"contact.html")
 def team(request):
     return render(request,"team.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+
+
+from rest_framework.views import APIView
+from django.http import JsonResponse
+
+
+
+
+
+class call_model(APIView):
+    def get(self,request):
+        
+            text = 'amazing at this'
+            vector = MakFeedbackConfig.vectorizer.transform([text])
+            prediction = MakFeedbackConfig.model.predict(vector)[0]
+            response = {'sentiment':prediction}
+            post = 0
+            neg = 0
+            neu = 0
+            if prediction == "positive":
+                post+=1
+            elif prediction == "negative":
+                neg+=1
+            else:
+                neu+=1
+            return render(request,'sent.html',{'post':post,'neg':neg,'neu':neu})
+        
+def do(request):
+            
+            return render(request,'sent.html',{})
+    """
