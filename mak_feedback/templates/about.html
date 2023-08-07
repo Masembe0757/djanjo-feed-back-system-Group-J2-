@@ -28,111 +28,200 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Squadfree
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Additional CSS -->
+  <style>
+    /* Custom styles for the about page */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      
+        background-image: url("{% static 'assets/img/std1.jpg' %}"');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      
+    }
+
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    /* Style for the "About us" button */
+    .about-btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .about-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Custom style for the team members list */
+    .team-members {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 20px;
+    }
+
+    .team-members li {
+      margin-bottom: 10px;
+    }
+
+    .team-members li:before {
+      content: '\2022'; /* Use a bullet point for each list item */
+      color: #007bff;
+      font-size: 18px;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    /* Additional styles for responsiveness */
+    @media (max-width: 768px) {
+      .content {
+        text-align: center;
+      }
+    }
+
+    .photo-section {
+      margin-top: 30px;
+    }
+
+    .photo-item {
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-item:hover img {
+      transform: scale(1.1);
+    }
+
+   
+  </style>
+
 </head>
 
 <body>
+
+  
+  <!-- Include the header -->
   {% include 'header.html'%}
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
+    <!-- Breadcrumbs Section remains unchanged -->
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>About</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>About</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs Section -->
-
-    <!-- ======= About Section ======= -->
+    <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
 
         <div class="row no-gutters">
           <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
             <div class="content">
+              <!-- System Description -->
               <h3>System Description</h3>
               <p>
                 The Makerere Student Feedback System is an online platform designed to collect valuable feedback from students
-        about their educational experiences at Makerere University. We believe that your feedback is crucial in improving
-        the quality of education and enhancing the learning environment for all of the students.
+                about their educational experiences at Makerere University. We believe that your feedback is crucial in improving
+                the quality of education and enhancing the learning environment for all students.
               </p>
+              <!-- "About Us" Button -->
               <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
             </div>
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
+                <!-- Mission and Vision -->
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
                   <h4>Mission and Vision</h4>
                   <p>
                     <strong>Mission:</strong> To create an efficient and user-friendly platform for students to share their feedback
-                    and contribute to the continuous improvement of the great Makerere University.
-                </p>
-                <p>
+                    and contribute to the continuous improvement of Makerere University.
+                  </p>
+                  <p>
                     <strong>Vision:</strong> To foster a collaborative feedback culture that empowers students to have a voice and
                     drives positive changes across the university community.
-                </p>
-                
+                  </p>
                 </div>
+                <!-- Key Features -->
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i class="bx bx-cube-alt"></i>
                   <h4>Key Features</h4>
                   <ul>
                     <li>Provide feedback on courses, instructors, and campus facilities.</li>
-                    <li>Anonymous feedback submission to ensure privacy and encourage honest responses.</li>
-                    <li>Regular analysis of feedback to identify areas for improvement and implement necessary changes.</li>
-                </ul>
+                    <li>Submit feedback anonymously to ensure privacy and encourage honest responses.</li>
+                    <li>Regularly analyze feedback to identify areas for improvement and implement necessary changes.</li>
+                  </ul>
                 </div>
+                <!-- Meet the Team -->
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                   <i class="bx bx-images"></i>
                   <h4>Meet the Team</h4>
                   <p>
                     Our team of dedicated developers has worked tirelessly to build the Makerere Student Feedback System.
                     Meet our team members:
-                </p>
-                <ul>
+                  </p>
+                  <ul>
                     <li>Masembe Sendi Joseph - Senior Developer</li>
                     <li>Ochieng Devote Boniface - Tech Lead</li>
                     <li>Aparo Cecilia - Frontend Developer</li>
                     <li>Kabenge Isham - Team Lead</li>
-                    <li>Mukisa Vaniah Christian- Project Lead</li>
-                </ul>
+                    <li>Mukisa Vaniah Christian - Project Lead</li>
+                  </ul>
                 </div>
+                <!-- Privacy and Security -->
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i class="bx bx-shield"></i>
                   <h4>Privacy and Security</h4>
                   <p>
-                    We take your privacy and security  very seriously. All feedback submissions are treated with strict confidentiality,
+                    We take your privacy and security very seriously. All feedback submissions are treated with strict confidentiality,
                     and access to feedback data is restricted to authorized personnel only.
-                </p>
+                  </p>
                 </div>
               </div>
-            </div><!-- End .content-->
+            </div>
           </div>
         </div>
 
       </div>
+     
+    
     </section><!-- End About Section -->
 
-  </main><!-- End #main -->
+  </main>
 
+  <!-- Include the footer -->
   {% include 'footer.html'%}
 
+  <!-- Vendor JS Files and Template Main JS File remain unchanged -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
@@ -148,5 +237,5 @@
   <script src="{% static 'assets/js/main.js' %}"></script>
 
 </body>
-
 </html>
+
