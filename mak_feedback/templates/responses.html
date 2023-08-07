@@ -3,15 +3,31 @@
 <html lang="en">
 
 <head>
+  <style>
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    /* Add this CSS to style the individual response items in the grid */
+    .icon-box {
+      width: calc(70% - 10px); /* Adjust the width as per your design */
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+  </style>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>Responses</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png" rel="icon' %}">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -44,161 +60,104 @@
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
+    <!-- ... -->
+  
+    <!-- ======= Responses Section ======= -->
+    <section class="about">
       <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Responses</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Responses</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs Section -->
-    
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      
-      <div class="container">
-        <center>{% for message in messages %}
-          <p style="color:green;" >{{message}}</p>
-          {% endfor %}
-        </center>
-
-        <div class="row no-gutters">
+        <div class="row">
           <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
             COMPLAINTS ABOUT COURSES
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
-                
                 {% for course in courses %}
-
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
-                  <h4>Student : {{course.first_name}}&nbsp {{course.last_name}} </h4>
-                  <p>Student number : {{course.student_number}} </p>
-                  <p>Registration number : {{course.registration_number}} </p>
-                  <p>Education level : {{course.level}} </p>
-                  <p>College : {{course.college}} </p>
-                  <p>Program : {{course.program}} </p>
-                  <p>Course unit : {{course.course_unit}} </p>
-                  <p>Course code : {{course.course_code}} </p>
-                  <p>Course instructor : {{course.course_instructor}} </p>
-                  <p>Argument : </p>
-                  <p>{{course.argument}} </p>
-                  <center><a href ="deletec/{{course.id}}" ><button  style="background-color:red; color: whitesmoke;  border-radius:5px" >delete</button></a></center>      
-                  </div>
-                
+                  <h4>Student: {{ course.first_name }} {{ course.last_name }}</h4>
+                  <p>Student number: {{ course.student_number }}</p>
+                  <p>Registration number: {{ course.registration_number }}</p>
+                  <p>Education level: {{ course.level }}</p>
+                  <p>College: {{ course.college }}</p>
+                  <p>Program: {{ course.program }}</p>
+                  <p>Course unit: {{ course.course_unit }}</p>
+                  <p>Course code: {{ course.course_code }}</p>
+                  <p>Course instructor: {{ course.course_instructor }}</p>
+                  <p>Argument:</p>
+                  <p>{{ course.argument }}</p>
+                  <center><a href="deletec/{{ course.id }}"><button style="background-color:red; color: whitesmoke; border-radius:5px;">delete</button></a></center>
+                </div>
                 {% endfor %}
-                
               </div>
             </div><!-- End .content-->
           </div>
         </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-
-
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row no-gutters">
+  
+        <!-- ======= Complaints About Facilities Section ======= -->
+        <div class="row">
           <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
             COMPLAINTS ABOUT FACILITIES
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
-                
                 {% for facility in facilities %}
-
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
-                  <h4>Student : {{facility.first_name}}&nbsp {{facility.last_name}} </h4>
-                  <p>Student number : {{facility.student_number}} </p>
-                  <p>Registration number : {{facility.registration_number}} </p>
-                  <p>Education level : {{facility.level}} </p>
-                  <p>College : {{facility.college}} </p>
-                  <p>Program : {{facility.program}} </p>
-                  <p>Facility : {{facility.facility}} </p>
-                  <p>Personel in charge: {{facility.waden}} </p>
-                  <p>Argument : </p>
-                  <p>{{facility.argument}} </p>
-                  <center><a href ="deletef/{{facility.id}}" ><button style="background-color:red; color: whitesmoke;  border-radius:5px" >delete</button></a>  </center>    
-                  </div>
-                
+                  <h4>Student: {{ facility.first_name }} {{ facility.last_name }}</h4>
+                  <p>Student number: {{ facility.student_number }}</p>
+                  <p>Registration number: {{ facility.registration_number }}</p>
+                  <p>Education level: {{ facility.level }}</p>
+                  <p>College: {{ facility.college }}</p>
+                  <p>Program: {{ facility.program }}</p>
+                  <p>Facility: {{ facility.facility }}</p>
+                  <p>Personnel in charge: {{ facility.waden }}</p>
+                  <p>Argument:</p>
+                  <p>{{ facility.argument }}</p>
+                  <center><a href="deletef/{{ facility.id }}"><button style="background-color:red; color: whitesmoke; border-radius:5px;">delete</button></a></center>
+                </div>
                 {% endfor %}
-                
               </div>
             </div><!-- End .content-->
           </div>
         </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-
-
-
-     <!-- ======= About Section ======= -->
-     <section id="about" class="about">
-      <div class="container">
-
-        <div class="row no-gutters">
+  
+        <!-- ======= Complaints About Instructors Section ======= -->
+        <div class="row">
           <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
             COMPLAINTS ABOUT INSTRUCTORS
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
-                
                 {% for inst in instructors %}
-
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
-                  <h4>Student : {{inst.first_name}}&nbsp {{inst.last_name}} </h4>
-                  <p>Student number : {{inst.student_number}} </p>
-                  <p>Registration number : {{inst.registration_number}} </p>
-                  <p>Education level : {{inst.level}} </p>
-                  <p>College : {{inst.college}} </p>
-                  <p>Program : {{inst.program}} </p>
-                  <p>inst unit : {{inst.course_unit}} </p>
-                  <p>Course code : {{inst.course_code}} </p>
-                  <p>Course instructor : {{inst.course_instructor}} </p>
-                  <p>Argument : </p>
-                  <p>{{inst.argument}} </p>
-                  <center><a href ="deletei/{{inst.id}}" ><button style="background-color:red; color: whitesmoke;  border-radius:5px" >delete</button></a></center>      
-                  </div>
-                
+                  <h4>Student: {{ inst.first_name }} {{ inst.last_name }}</h4>
+                  <p>Student number: {{ inst.student_number }}</p>
+                  <p>Registration number: {{ inst.registration_number }}</p>
+                  <p>Education level: {{ inst.level }}</p>
+                  <p>College: {{ inst.college }}</p>
+                  <p>Program: {{ inst.program }}</p>
+                  <p>Instructor unit: {{ inst.course_unit }}</p>
+                  <p>Course code: {{ inst.course_code }}</p>
+                  <p>Course instructor: {{ inst.course_instructor }}</p>
+                  <p>Argument:</p>
+                  <p>{{ inst.argument }}</p>
+                  <center><a href="deletei/{{ inst.id }}"><button style="background-color:red; color: whitesmoke; border-radius:5px;">delete</button></a></center>
+                </div>
                 {% endfor %}
-               
-                
               </div>
             </div><!-- End .content-->
           </div>
         </div>
-
+  
       </div>
-    </section><!-- End About Section -->
-
-
-
-
-
-
-
-
-  </main><!-- End #main -->
-
+    </section><!-- End Responses Section -->
+  
+  </main>
+  
   {% include 'footer.html' %}
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

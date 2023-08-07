@@ -35,6 +35,11 @@ class Instructors(models.Model):
     course_code = models.CharField(max_length = 100)
     course_instructor = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 500)
+    one = models.CharField(max_length = 100 , null= True)
+    two = models.CharField(max_length = 100 , null= True)
+    third = models.CharField(max_length = 100 , null= True)
+    four  = models.CharField(max_length = 100 , null= True)
+    five = models.CharField(max_length = 100 , null= True)
     
     
 class Facilities(models.Model):

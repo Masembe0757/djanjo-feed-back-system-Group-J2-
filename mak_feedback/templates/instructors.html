@@ -76,12 +76,93 @@
               {% endfor %}
               <form action="instructors" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
-                  <div class="form-group row">
-                      <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
-                      <div class="col-sm-10">
-                          <input type="text" class="form-control" name="fname" id="inputFirstName" placeholder="First name" />
-                      </div>
+                  <div class="row">
+                    <div class="col">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="fname"
+                        placeholder="First name"
+                      />
+                    </div>
+                    <div class="col">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="lname"
+                        placeholder="Last name"
+                      />
+                    </div>
                   </div>
+                  <br />
+    
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label"
+                      >Student number</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputEmail3"
+                        name="student_number"
+                        placeholder="Student number"
+                      />
+                    </div>
+                  </div>
+                  <br />
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label"
+                      >Registration number</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputPassword3"
+                        name="registration_number"
+                        placeholder="Registration number"
+                      />
+                    </div>
+                  </div>
+                  <br />
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Level</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="post graduate" checked>
+                          <label class="form-check-label" for="gridRadios1">
+                            Post graduate
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="under graduate">
+                          <label class="form-check-label" for="gridRadios2">
+                            Undergraduate
+                          </label>
+                      </div>
+                    </div>
+                
+                  </fieldset>
+                  <br>
+              <div class="form-group row">
+                <label for="inputCity">College</label>
+                <select class="form-control" name ="college" id="inputCity">
+                  <option value="COSIS" >COSIS</option>
+                  <option value="CONAS" >CONAS</option>
+                  <option value="COBAMS" >COBAMS</option>
+                  <option value="CEES" >CEES</option>
+                  <option value="CAES" >CAES</option>
+                  <option value="CHUSS" >CHUSS</option>
+                  <option value="CEDAT" >CEDAT</option>
+                </select>
+              </div>
+              <br>
+              <div class="form-group row">
+                <label for="inputCity">Your Program</label>
+                <input type="text" class="form-control" name ="program" id="inputCity">
+              </div>
                   <!-- Add other personal info fields as needed -->
 
                   <!-- Course and Instructor Review Questions -->
@@ -102,11 +183,11 @@
                   <div class="form-group">
                       <label for="inputReviewExperience">Did the lecturer create a positive learning environment?</label>
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="review_experience" id="radioExperience1" value="Excellent">
+                          <input class="form-check-input" type="radio" name="one" id="radioExperience1" value="yes">
                           <label class="form-check-label" for="radioExperience1">yes</label>
                       </div>
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="review_experience" id="radioExperience2" value="Good">
+                          <input class="form-check-input" type="radio" name="one" id="radioExperience2" value="no">
                           <label class="form-check-label" for="radioExperience2">no</label>
                       </div>
 
@@ -115,60 +196,60 @@
                   <div class="form-group">
                     <label for="inputReviewExperience">Did the lecturer engage students effectively during the lectures?</label>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="review_experience" id="radioExperience1" value="Excellent">
+                      <input class="form-check-input" type="radio" name="two" id="radioExperience1" value="yes">
                       <label class="form-check-label" for="radioExperience1">yes</label>
                   </div>
                   <div class="form-check">
-                      <input class="form-check-input" type="radio" name="review_experience" id="radioExperience2" value="Good">
+                      <input class="form-check-input" type="radio" name="two" id="radioExperience2" value="no">
                       <label class="form-check-label" for="radioExperience2">no</label>
                   </div>
                 </div><br>
                 <div class="form-group">
                   <label for="inputReviewExperience">Did the lecturer support students' learning goals and academic progress?</label>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="review_experience" id="radioExperience1" value="Excellent">
+                    <input class="form-check-input" type="radio" name="three" id="radioExperience1" value="yes">
                     <label class="form-check-label" for="radioExperience1">yes</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="review_experience" id="radioExperience2" value="Good">
+                    <input class="form-check-input" type="radio" name="three" id="radioExperience2" value="no">
                     <label class="form-check-label" for="radioExperience2">no</label>
                 </div>
               </div><br>
               <div class="form-group">
                 <label for="inputReviewExperience">How responsive was the lecturer to emails or messages?</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="review_experience" id="radioExperience1" value="Excellent">
+                    <input class="form-check-input" type="radio" name="four" id="radioExperience1" value="Excellent">
                     <label class="form-check-label" for="radioExperience1">Excellent</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="review_experience" id="radioExperience2" value="Good">
+                    <input class="form-check-input" type="radio" name="four" id="radioExperience2" value="Good">
                     <label class="form-check-label" for="radioExperience2">Good</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="review_experience" id="radioExperience3" value="Average">
+                    <input class="form-check-input" type="radio" name="four" id="radioExperience3" value="Average">
                     <label class="form-check-label" for="radioExperience3">Average</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="review_experience" id="radioExperience4" value="Needs Improvement">
+                    <input class="form-check-input" type="radio" name="four" id="radioExperience4" value="Needs Improvement">
                     <label class="form-check-label" for="radioExperience4">Needs Improvement</label>
                 </div>
             </div><br>
             <div class="form-group">
               <label for="inputReviewExperience">How would you rate your overall experience with the lecturer?</label>
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="review_experience" id="radioExperience1" value="Excellent">
+                  <input class="form-check-input" type="radio" name="five" id="radioExperience1" value="Excellent">
                   <label class="form-check-label" for="radioExperience1">Excellent</label>
               </div>
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="review_experience" id="radioExperience2" value="Good">
+                  <input class="form-check-input" type="radio" name="five" id="radioExperience2" value="Good">
                   <label class="form-check-label" for="radioExperience2">Good</label>
               </div>
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="review_experience" id="radioExperience3" value="Average">
+                  <input class="form-check-input" type="radio" name="five" id="radioExperience3" value="Average">
                   <label class="form-check-label" for="radioExperience3">Average</label>
               </div>
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="review_experience" id="radioExperience4" value="Needs Improvement">
+                  <input class="form-check-input" type="radio" name="five" id="radioExperience4" value="Needs Improvement">
                   <label class="form-check-label" for="radioExperience4">Needs Improvement</label>
               </div>
               
