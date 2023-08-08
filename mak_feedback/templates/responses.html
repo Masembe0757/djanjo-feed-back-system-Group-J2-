@@ -113,8 +113,14 @@
                   <p>Program: {{ facility.program }}</p>
                   <p>Facility: {{ facility.facility }}</p>
                   <p>Personnel in charge: {{ facility.waden }}</p>
+                  <p>Facility Query: {{ facility.facilityQuery }}</p>
+                  <p>Awareness: {{ facility.awareness }}</p>
+                  <p>Facility Usage: {{ facility.facilityUsage }}</p>
+                  <p>Cleaning: {{ facility.cleaning }}</p>
+                  <p>Rating: {{ facility.rating }}</p>
                   <p>Argument:</p>
                   <p>{{ facility.argument }}</p>
+
                   <center><a href="deletef/{{ facility.id }}"><button style="background-color:red; color: whitesmoke; border-radius:5px;">delete</button></a></center>
                 </div>
                 {% endfor %}
