@@ -273,6 +273,7 @@ def contact(request):
     return render(request,"contact.html")
 def team(request):
     return render(request,"team.html")
+<<<<<<< HEAD
 
 
 
@@ -334,3 +335,7 @@ def do(request):
             
             return render(request,'sent.html',{})
     """
+=======
+def services(request):
+    return render(request,"services.html")
+>>>>>>> origin/devote
