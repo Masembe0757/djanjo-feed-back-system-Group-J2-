@@ -53,4 +53,9 @@ class Facilities(models.Model):
     facility = models.CharField(max_length = 100)
     waden = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 100)
+    facilityQuery = models.CharField(max_length = 100 , null= True)
+    awareness = models.CharField(max_length = 100 , null= True)
+    facilityUsage = models.CharField(max_length = 100 , null= True)
+    cleaning = models.CharField(max_length = 100 , null= True)
+    rating = models.CharField(max_length = 100 , null= True)
     

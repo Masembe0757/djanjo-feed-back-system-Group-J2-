@@ -26,9 +26,14 @@ def facilities(request):
                 facility= request.POST['facility']
                 wad= request.POST['charge']
                 desc = request.POST['description']
+                facilityQuery = request.POST['facilityQuery']
+                awareness = request.POST['awareness']
+                facilityUsage = request.POST['facilityUsage']
+                cleaning= request.POST['cleaning']
+                rating = request.POST['rating']
                 
-                
-                Facilities(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,facility=facility,waden=wad,argument=desc).save();
+                Facilities(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,facility=facility,waden=wad,facilityQuery=facilityQuery,awareness=awareness,facilityUsage=facilityUsage,cleaning=cleaning,rating=rating,argument=desc).save();
+
                 messages.info(request,'response published successfully')
                 return redirect("facilities")
             except Exception as e:
@@ -273,7 +278,7 @@ def contact(request):
     return render(request,"contact.html")
 def team(request):
     return render(request,"team.html")
-<<<<<<< HEAD
+
 
 
 
@@ -335,7 +340,4 @@ def do(request):
             
             return render(request,'sent.html',{})
     """
-=======
-def services(request):
-    return render(request,"services.html")
->>>>>>> origin/devote
+
