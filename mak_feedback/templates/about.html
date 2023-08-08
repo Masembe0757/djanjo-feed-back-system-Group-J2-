@@ -6,12 +6,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About</title>
+  <title>Makerere Student Feedback System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png" rel="icon' %}">
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -39,36 +39,7 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-between position-relative">
-
-      <div class="logo">
-        <h1 class="text-light"><a href="/"><span>Mak-feedback</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="/">Home</a></li>
-          <li class="dropdown"><a href="#"><span>Forms</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/courses">Courses</a></li>
-              <li><a href="/instructors">Instructors</a></li>
-              <li><a href="/facilities">Compus facilities</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="/about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="/team">Team</a></li>
-          
-          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
+  {% include 'header.html' %}
 
   <main id="main">
 
@@ -94,11 +65,13 @@
         <div class="row no-gutters">
           <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
             <div class="content">
-              <h3>Voluptatem dignissimos provident quasi</h3>
+              <h3>System Description</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                The Makerere Student Feedback System is an online platform designed to collect valuable feedback from students
+        about their educational experiences at Makerere University. We believe that your feedback is crucial in improving
+        the quality of education and enhancing the learning environment for all students.
               </p>
-              <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
+              
             </div>
           </div>
           <div class="col-xl-7 d-flex align-items-stretch">
@@ -106,23 +79,49 @@
               <div class="row">
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-receipt"></i>
-                  <h4>Corporis voluptates sit</h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4>Mission and Vision</h4>
+                  <p>
+                    <strong>Mission:</strong> To create an efficient and user-friendly platform for students to share their feedback
+                    and contribute to the continuous improvement of Makerere University.
+                </p>
+                <p>
+                    <strong>Vision:</strong> To foster a collaborative feedback culture that empowers students to have a voice and
+                    drives positive changes across the university community.
+                </p>
+                
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i class="bx bx-cube-alt"></i>
-                  <h4>Ullamco laboris nisi</h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                  <h4>Key Features</h4>
+                  <ul>
+                    <li>Provide feedback on courses, instructors, and campus facilities.</li>
+                    <li>Anonymous feedback submission to ensure privacy and encourage honest responses.</li>
+                    <li>Regular analysis of feedback to identify areas for improvement and implement necessary changes.</li>
+                </ul>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                   <i class="bx bx-images"></i>
-                  <h4>Labore consequatur</h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                  <h4>Meet the Team</h4>
+                  <p>
+                    Our team of dedicated developers has worked tirelessly to build the Makerere Student Feedback System.
+                    Meet our team members:
+                </p>
+                <ul>
+                    <li>Masembe Sendi Joseph - Senior Developer</li>
+                    <li>Ochieng Devote Boniface - Tech Lead</li>
+                    <li>Aparo Cecilia - Frontend Developer</li>
+                    <li>Kabenge Isham - Team Lead</li>
+                    <li>Mukisa Vaniah Christian- Project Lead</li>
+                </ul>
+                <center><a href="team" class="about-btn"> <i class="bx bx-chevron-right"></i></a></center>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i class="bx bx-shield"></i>
-                  <h4>Beatae veritatis</h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                  <h4>Privacy and Security</h4>
+                  <p>
+                    We take your privacy and security seriously. All feedback submissions are treated with strict confidentiality,
+                    and access to feedback data is restricted to authorized personnel only.
+                </p>
                 </div>
               </div>
             </div><!-- End .content-->
@@ -134,6 +133,9 @@
 
   </main><!-- End #main -->
 
+<<<<<<< HEAD
+  {% include 'footer.html'%}
+=======
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
@@ -207,6 +209,7 @@
       </div>
     </div>
   </footer><!-- End Footer -->
+>>>>>>> origin/devote
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

@@ -1,0 +1,269 @@
+{% include 'header.html' %}
+
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mak-feedback</title>
+  </head>
+
+    <body>
+      
+    <div class="about">
+      <center>
+        <div class="container" >
+          <div class ="content">
+            <h3>Feed back per category</h3>
+            <div  style="width :50%" >
+              <canvas id="myChart"></canvas>
+            </div>
+
+
+            <br><br>
+            <h3>Feed back rate from each level</h3>
+            <div  style="width :50%" >
+              <canvas id="Chart3"></canvas>
+            </div>
+
+
+
+            <br><br>
+            <h3>Feed back rate from each college</h3>
+            <div  style="width :50%" >
+              <canvas id="Chart1"></canvas>
+            </div>
+
+            <br><br>
+            <h3>Feed back rate from each college as a bar graph</h3>
+            <div  style="width :90%" >
+              <canvas id="Chart2"></canvas>
+            </div>
+
+
+            <br><br><br><br>
+            <h3>Sentiment Analysis per category</h3><br><br>
+            <h3>Courses response sentiment analysis</h3>
+            <div  style="width :70%" >
+              <canvas id="Chart4"></canvas>
+            </div>
+
+
+            <br><br>
+            <h3>Instructors response sentiment analysis</h3>
+            <div  style="width :70%" >
+              <canvas id="Chart5"></canvas>
+            </div>
+
+            <br><br>
+            <h3>Facilities response sentiment analysis</h3>
+            <div  style="width :70%" >
+              <canvas id="Chart6"></canvas>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div><br><br><br><br>
+        
+      </center>
+    </div>
+
+
+
+{% include 'footer.html' %}
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Courses', 'Facilities', 'Instructors'],
+      datasets: [{
+        label: 'feed back made',
+        data: [{{courses_no}},{{facilities_no}},{{instructors_no}}],
+        borderWidth: 1,
+        backgroundColor :['purple','red','blue'],
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+    
+  });
+
+
+
+
+  const ctx3 = document.getElementById('Chart3');
+
+  new Chart(ctx3, {
+    type: 'doughnut',
+    data: {
+      labels: ['Post graduate', 'Under graduate'],
+      datasets: [{
+        label: 'feed from leve',
+        data: [{{post_sum}},{{und_sum}}],
+        borderWidth: 1,
+        backgroundColor :['red','blue'],
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+    
+  });
+
+
+
+
+  const ctx1 = document.getElementById('Chart1');
+
+  new Chart(ctx1, {
+    type: 'polarArea',
+    data: {
+      labels: ['COSIS', 'CEDAT', 'CHUSS','CAES','COBAMS','CEES','CONAS'],
+      datasets: [{
+        label: 'feed back from college',
+        data: [{{cosis_sum}},{{cedat_sum}},{{chuss_sum}},{{caes_sum}},{{cobams_sum}},{{cees_sum}},{{conas_sum}}],
+        borderWidth: 1,
+        backgroundColor :['purple','red','blue','green','pink','tomato','grey'],
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+    
+  });
+
+
+
+  const ctx4 = document.getElementById('Chart4');
+
+  new Chart(ctx4, {
+    type: 'polarArea',
+    data: {
+      labels: ['Neutral', 'Positive', 'Negative'],
+      datasets: [{
+        label: 'Sentiment responses',
+        data: [{{neu_c}},{{post_c}},{{neg_c}}],
+        borderWidth: 1,
+        backgroundColor :['purple','red','blue'],
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+    
+  });
+
+
+
+
+
+
+  const ctx5 = document.getElementById('Chart5');
+
+  new Chart(ctx5, {
+    type: 'polarArea',
+    data: {
+      labels: ['Neutral', 'Positive', 'Negative'],
+      datasets: [{
+        label: 'Sentiment responses',
+        data: [{{neu_i}},{{post_i}},{{neg_i}}],
+        borderWidth: 1,
+        backgroundColor :['purple','red','blue'],
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+    
+  });
+
+
+
+  const ctx6 = document.getElementById('Chart6');
+
+  new Chart(ctx6, {
+    type: 'polarArea',
+    data: {
+      labels: ['Neutral', 'Positive', 'Negative'],
+      datasets: [{
+        label: 'Sentiment responses',
+        data: [{{neu_f}},{{post_f}},{{neg_f}}],
+        borderWidth: 1,
+        backgroundColor :['purple','red','blue'],
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+    
+  });
+
+
+
+
+
+
+  const ctx2 = document.getElementById('Chart2');
+
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['COSIS', 'CEDAT', 'CHUSS','CAES','COBAMS','CEES','CONAS'],
+      datasets: [{
+        label: 'feed back from college',
+        data: [{{cosis_sum}},{{cedat_sum}},{{chuss_sum}},{{caes_sum}},{{cobams_sum}},{{cees_sum}},{{conas_sum}}],
+        borderWidth: 1,
+        backgroundColor :['purple','red','blue','green','indigo','pink','grey'],
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+    
+  });
+  
+</script>
+
+
+
+    </body>
+</html>
+
+
