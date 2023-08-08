@@ -53,8 +53,10 @@ class Facilities(models.Model):
     facility = models.CharField(max_length = 100)
     waden = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 100)
-    one = models.CharField(max_length = 100 , null= True)
-    two = models.CharField(max_length = 100 , null= True)
-    third = models.CharField(max_length = 100 , null= True)
-    four  = models.CharField(max_length = 100 , null= True)
-    five = models.CharField(max_length = 100 , null= True)
+    facilityQuery = models.CharField(max_length = 100 , null= True)
+    awareness = models.CharField(max_length = 100 , null= True)
+    facilityUsage = models.CharField(max_length = 100 , null= True)
+    cleaning = models.CharField(max_length = 100 , null= True)
+    rating = models.CharField(max_length = 100 , null= True)
+    
+
