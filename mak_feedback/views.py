@@ -85,8 +85,12 @@ def courses(request):
                 code = request.POST['code']
                 instructor = request.POST['instructor']
                 desc = request.POST['description']
+                engagement = request.POST['engagement']
+                variety = request.POST['variety']
+                assesement = request.POST['assesement']
+                recommend = request.POST['recommend']
                 
-                Courses(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,argument=desc).save();
+                Courses(engagement = engagement,variety = variety, assesement = assesement, recommend =recommend,first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,argument=desc).save();
                 messages.info(request,'response published successfully')
                 return redirect("courses")
             except Exception as e:

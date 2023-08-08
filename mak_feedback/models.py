@@ -13,6 +13,10 @@ class Courses(models.Model):
     course_code = models.CharField(max_length = 100)
     course_instructor = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 500)
+    engagement = models.CharField(max_length = 100 , null= True)
+    variety = models.CharField(max_length = 100 , null= True)
+    assesement = models.CharField(max_length = 100 , null= True)
+    recommend = models.CharField(max_length = 100, null= True)
     
     """
     Description = models.TextField()
