@@ -35,11 +35,11 @@ class Instructors(models.Model):
     course_code = models.CharField(max_length = 100)
     course_instructor = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 500)
-    one = models.CharField(max_length = 100 , null= True)
-    two = models.CharField(max_length = 100 , null= True)
-    third = models.CharField(max_length = 100 , null= True)
-    four  = models.CharField(max_length = 100 , null= True)
-    five = models.CharField(max_length = 100 , null= True)
+    learning_environment = models.CharField(max_length = 100 , null= True)
+    students_engagement= models.CharField(max_length = 100 , null= True)
+    students_support  = models.CharField(max_length = 100 , null= True)
+    lecturer_response  = models.CharField(max_length = 100 , null= True)
+    overall_experience= models.CharField(max_length = 100 , null= True)
     
     
 class Facilities(models.Model):
@@ -53,4 +53,8 @@ class Facilities(models.Model):
     facility = models.CharField(max_length = 100)
     waden = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 100)
-    
+    one = models.CharField(max_length = 100 , null= True)
+    two = models.CharField(max_length = 100 , null= True)
+    third = models.CharField(max_length = 100 , null= True)
+    four  = models.CharField(max_length = 100 , null= True)
+    five = models.CharField(max_length = 100 , null= True)
