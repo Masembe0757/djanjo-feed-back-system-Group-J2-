@@ -34,6 +34,7 @@ def facilities(request):
                 
                 Facilities(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,facility=facility,waden=wad,facilityQuery=facilityQuery,awareness=awareness,facilityUsage=facilityUsage,cleaning=cleaning,rating=rating,argument=desc).save();
 
+
                 messages.info(request,'response published successfully')
                 return redirect("facilities")
             except Exception as e:
