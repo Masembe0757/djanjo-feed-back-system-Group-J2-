@@ -16,7 +16,6 @@ urlpatterns = [
     path('logout',views.logout, name ="logout"),
     path('contact',views.contact, name ="contact"),
     path('team',views.team, name ="team"),
-<<<<<<< HEAD
     path('responses',views.response, name ="response"),
     path('statistics',views.stat, name ="statistics"),
     
@@ -27,10 +26,7 @@ urlpatterns = [
     path('deletec/<int:id>', views.deletec, name = "deletec"),
     path('deletef/<int:id>', views.deletef, name = "deletef"),
     path('deletei/<int:id>', views.deletei, name = "deletei"),
-=======
-    path('services',views.services, name ="services"),
-    
->>>>>>> origin/devote
+
     
     
 ]
