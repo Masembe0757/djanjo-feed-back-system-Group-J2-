@@ -13,6 +13,10 @@ class Courses(models.Model):
     course_code = models.CharField(max_length = 100)
     course_instructor = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 500)
+    engagement = models.CharField(max_length = 100 , null= True)
+    variety = models.CharField(max_length = 100 , null= True)
+    assesement = models.CharField(max_length = 100 , null= True)
+    recommend = models.CharField(max_length = 100, null= True)
     
     """
     Description = models.TextField()
@@ -35,6 +39,11 @@ class Instructors(models.Model):
     course_code = models.CharField(max_length = 100)
     course_instructor = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 500)
+    learning_environment = models.CharField(max_length = 100 , null= True)
+    students_engagement= models.CharField(max_length = 100 , null= True)
+    students_support  = models.CharField(max_length = 100 , null= True)
+    lecturer_response  = models.CharField(max_length = 100 , null= True)
+    overall_experience= models.CharField(max_length = 100 , null= True)
     
     
 class Facilities(models.Model):
@@ -48,4 +57,10 @@ class Facilities(models.Model):
     facility = models.CharField(max_length = 100)
     waden = models.CharField(max_length = 100)
     argument = models.CharField(max_length = 100)
+    facilityQuery = models.CharField(max_length = 100 , null= True)
+    awareness = models.CharField(max_length = 100 , null= True)
+    facilityUsage = models.CharField(max_length = 100 , null= True)
+    cleaning = models.CharField(max_length = 100 , null= True)
+    rating = models.CharField(max_length = 100 , null= True)
     
+
