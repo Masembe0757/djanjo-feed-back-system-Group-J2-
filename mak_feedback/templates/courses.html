@@ -74,7 +74,7 @@
               {% for message in messages %}
               <p style="color: crimson;">{{message}}</p>
               {% endfor %}
-              <form action="instructors" method="post" enctype="multipart/form-data">
+              <form action="courses" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
                   <div class="row">
                     <div class="col">
