@@ -146,9 +146,9 @@ def stat(request):
         instructor_no =Instructors.objects.all().count()
         facilities_no = Facilities.objects.all().count()
         
-        cosis_c = Courses.objects.filter(college = 'COSIS').count()
-        cosis_f = Facilities.objects.filter(college = 'COSIS').count()
-        cosis_i = Instructors.objects.filter(college = 'COSIS').count()
+        cosis_c = Courses.objects.filter(college = 'COCIS').count()
+        cosis_f = Facilities.objects.filter(college = 'COCIS').count()
+        cosis_i = Instructors.objects.filter(college = 'COCIS').count()
         cosis_sum = cosis_c+cosis_f+cosis_i
         
         cedat_c = Courses.objects.filter(college = 'CEDAT').count()
