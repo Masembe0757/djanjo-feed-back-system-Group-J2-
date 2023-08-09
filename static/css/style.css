@@ -411,55 +411,47 @@
 }
 
 /*** Team ***/
-/* Custom CSS for Team Section */
-.team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .team-member .pic {
-    width: 200px; /* Set the desired width for the team member image */
-    height: 200px; /* Set the desired height for the team member image */
-    border-radius: 50%;
+.team-item img {
+    transition: 0.5s;
+}
+
+.team-item:hover img {
+    transform: scale(1.1);
+}
+
+.team-item .team-text {
+    height: 90px;
     overflow: hidden;
-  }
-  
-  .team-member .pic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .team-member h4 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  .team-member span {
-    font-size: 18px;
-  }
-  
-  .team-member .social {
-    margin-top: 15px;
-  }
-  
-  .team-member .social a {
-    margin-right: 5px;
-    color: #888;
-    font-size: 20px;
-  }
-  
-  /* Additional styling for better alignment on smaller screens */
-  @media (max-width: 768px) {
-    .team-member .pic {
-      width: 150px;
-      height: 150px;
-    }
-  }
-  
+}
+
+.team-item .team-text .bg-light,
+.team-item .team-text .bg-primary {
+    position: relative;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+.team-item .team-text .bg-primary {
+    flex-direction: row;
+}
+
+.team-item:hover .team-text .bg-light {
+    margin-top: -90px;
+}
+
+.team-item .team-text .bg-primary .btn {
+    color: var(--primary);
+    background: #ffffff;
+}
+
+.team-item .team-text .bg-primary .btn:hover {
+    color: #ffffff;
+    background: var(--secondary);
+}
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-text,
@@ -574,20 +566,3 @@
 .footer .copyright a {
     color: var(--light);
 }
-
-/* Add this CSS to create a grid layout */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  /* Add this CSS to style the individual response items in the grid */
-  .icon-box {
-    width: calc(50% - 10px); /* Adjust the width as per your design */
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  

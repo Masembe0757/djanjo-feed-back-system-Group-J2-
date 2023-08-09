@@ -26,7 +26,6 @@ urlpatterns = [
     path('deletec/<int:id>', views.deletec, name = "deletec"),
     path('deletef/<int:id>', views.deletef, name = "deletef"),
     path('deletei/<int:id>', views.deletei, name = "deletei"),
-
     
     
 ]

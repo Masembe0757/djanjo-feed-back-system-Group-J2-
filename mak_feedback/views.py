@@ -7,7 +7,6 @@ from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.models import User,auth
 from .apps import MakFeedbackConfig
-import csv
 
 # Create your views here.
 
@@ -26,15 +25,9 @@ def facilities(request):
                 facility= request.POST['facility']
                 wad= request.POST['charge']
                 desc = request.POST['description']
-                facilityQuery = request.POST['facilityQuery']
-                awareness = request.POST['awareness']
-                facilityUsage = request.POST['facilityUsage']
-                cleaning= request.POST['cleaning']
-                rating = request.POST['rating']
                 
-                Facilities(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,facility=facility,waden=wad,facilityQuery=facilityQuery,awareness=awareness,facilityUsage=facilityUsage,cleaning=cleaning,rating=rating,argument=desc).save();
-
-
+                
+                Facilities(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,facility=facility,waden=wad,argument=desc).save();
                 messages.info(request,'response published successfully')
                 return redirect("facilities")
             except Exception as e:
@@ -56,14 +49,8 @@ def instructors(request):
                 code = request.POST['code']
                 instructor = request.POST['instructor']
                 desc = request.POST['description']
-                one = request.POST['one']
-                two = request.POST['two']
-                three = request.POST['three']
-                four = request.POST['four']
-                five = request.POST['five']
                 
-                
-                Instructors(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,one=one,two=two,third=three,four=four,five=five,argument=desc).save();
+                Instructors(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,argument=desc).save();
                 messages.info(request,'response published successfully')
                 return redirect("instructors")
             except Exception as e:
@@ -85,12 +72,8 @@ def courses(request):
                 code = request.POST['code']
                 instructor = request.POST['instructor']
                 desc = request.POST['description']
-                engagement = request.POST['engagement']
-                variety = request.POST['variety']
-                assesement = request.POST['assesement']
-                recommend = request.POST['recommend']
                 
-                Courses(engagement = engagement,variety = variety, assesement = assesement, recommend =recommend,first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,argument=desc).save();
+                Courses(first_name=fname,last_name=lname,student_number=student_number,registration_number=registration_number,level=level,college=college,program=program,course_unit=course_unit,course_code=code,course_instructor=instructor,argument=desc).save();
                 messages.info(request,'response published successfully')
                 return redirect("courses")
             except Exception as e:
@@ -312,7 +295,6 @@ def team(request):
 
 
 
-
 """
 
 
@@ -345,4 +327,3 @@ def do(request):
             
             return render(request,'sent.html',{})
     """
-
